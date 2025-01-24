@@ -1,21 +1,14 @@
-// Rutas de las canciones disponibles
 const tracks = {
     track3: '2676/3.mp3',
     track10: '2676/10.mp3',
     track12: '2676/12.mp3',
 };
 
-const durations = {
-    track3: '3:45',
-    track10: '4:12',
-    track12: '5:07',
-};
-
-// Cambios en el fondo por canción
+// Asociar canciones con fondos
 const backgrounds = {
-    track3: 'mesh-blue-purple',    // Azul-morado oscuro
-    track10: 'mesh-green-aqua',   // Verde-aqua oscuro
-    track12: 'mesh-red-purple',   // Rojo-morado oscuro
+    track3: 'mesh-blue-purple',    // Azul-morado
+    track10: 'mesh-green-aqua',   // Verde-aqua
+    track12: 'mesh-red-purple',   // Rojo-morado
 };
 
 let currentTrack = null;
@@ -24,25 +17,21 @@ let currentTrack = null;
 function playTrack(trackId) {
     const audioElement = document.getElementById('audio');
     const sourceElement = document.getElementById('audio-source');
+    const bodyElement = document.body;
 
     // Cambiar la fuente del audio al track seleccionado
     sourceElement.src = tracks[trackId];
 
-    // Cambiar el fondo de la página aplicando la clase adecuada
-    document.body.className = backgrounds[trackId] || '';
+    // Cambiar la clase del fondo del <body>
+    bodyElement.className = backgrounds[trackId] || ''; // Fondo gris oscuro si no se encuentra
 
     // Detener la canción anterior si está en reproducción
-
-    sourceElement.src = tracks[trackId];
-    document.body.className = backgrounds[trackId] || '';
-    
     if (currentTrack && currentTrack !== trackId) {
         audioElement.pause();
     }
 
+    // Reproducir la nueva canción
     audioElement.load();
     audioElement.play();
     currentTrack = trackId;
-}
-
 }
