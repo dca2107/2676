@@ -3,108 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2676</title>
-    <!-- Fuente Archivo de Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>2676 - Álbum de danieeel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Aquí va el archivo CSS -->
 </head>
 <body>
+
     <div class="container">
         <header>
             <h1>2676</h1>
             <p>Álbum de danieeel</p>
         </header>
 
-        <section class="album-info">
-            <h2>Escucha el álbum</h2>
+        <div class="album-info">
+            <h2>Canciones</h2>
             <div class="track-list">
-                <!-- Canción 1 (No disponible, deshabilitado) -->
                 <div class="track">
-                    <span class="track-title">Canción 1 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-
-                <!-- Canción 2 (No disponible, deshabilitado) -->
-                <div class="track">
-                    <span class="track-title">Canción 2 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-
-                <!-- Canción 3 (Disponible) -->
-                <div class="track">
-                    <span class="track-title">Canción 3 - Título</span>
-                    <button class="play-btn" onclick="playTrack('track3')">Reproducir</button>
-                </div>
-
-                <!-- Canciones 4-9 (No disponibles, deshabilitados) -->
-                <div class="track">
-                    <span class="track-title">Canción 4 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
+                    <span class="track-title">Canción 1</span>
+                    <button class="play-btn" data-song="1" disabled>Reproducir</button>
                 </div>
                 <div class="track">
-                    <span class="track-title">Canción 5 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
+                    <span class="track-title">Canción 2</span>
+                    <button class="play-btn" data-song="2" disabled>Reproducir</button>
                 </div>
                 <div class="track">
-                    <span class="track-title">Canción 6 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
+                    <span class="track-title">Canción 3</span>
+                    <button class="play-btn" data-song="3">Reproducir</button>
                 </div>
                 <div class="track">
-                    <span class="track-title">Canción 7 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
+                    <span class="track-title">Canción 4</span>
+                    <button class="play-btn" data-song="4" disabled>Reproducir</button>
                 </div>
                 <div class="track">
-                    <span class="track-title">Canción 8 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
+                    <span class="track-title">Canción 5</span>
+                    <button class="play-btn" data-song="5" disabled>Reproducir</button>
                 </div>
                 <div class="track">
-                    <span class="track-title">Canción 9 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-
-                <!-- Canción 10 (Disponible) -->
-                <div class="track">
-                    <span class="track-title">Canción 10 - Título</span>
-                    <button class="play-btn" onclick="playTrack('track10')">Reproducir</button>
-                </div>
-
-                <!-- Canción 11 (No disponible, deshabilitado) -->
-                <div class="track">
-                    <span class="track-title">Canción 11 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-
-                <!-- Canción 12 (Disponible) -->
-                <div class="track">
-                    <span class="track-title">Canción 12 - Título</span>
-                    <button class="play-btn" onclick="playTrack('track12')">Reproducir</button>
-                </div>
-
-                <!-- Canciones 13-15 (No disponibles, deshabilitados) -->
-                <div class="track">
-                    <span class="track-title">Canción 13 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
+                    <span class="track-title">Canción 6</span>
+                    <button class="play-btn" data-song="6" disabled>Reproducir</button>
                 </div>
                 <div class="track">
-                    <span class="track-title">Canción 14 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
+                    <span class="track-title">Canción 7</span>
+                    <button class="play-btn" data-song="7" disabled>Reproducir</button>
                 </div>
                 <div class="track">
-                    <span class="track-title">Canción 15 - Título</span>
-                    <button class="play-btn" disabled>Reproducir</button>
+                    <span class="track-title">Canción 8</span>
+                    <button class="play-btn" data-song="8" disabled>Reproducir</button>
+                </div>
+                <div class="track">
+                    <span class="track-title">Canción 9</span>
+                    <button class="play-btn" data-song="9" disabled>Reproducir</button>
+                </div>
+                <div class="track">
+                    <span class="track-title">Canción 10</span>
+                    <button class="play-btn" data-song="10">Reproducir</button>
+                </div>
+                <div class="track">
+                    <span class="track-title">Canción 11</span>
+                    <button class="play-btn" data-song="11" disabled>Reproducir</button>
+                </div>
+                <div class="track">
+                    <span class="track-title">Canción 12</span>
+                    <button class="play-btn" data-song="12">Reproducir</button>
+                </div>
+                <div class="track">
+                    <span class="track-title">Canción 13</span>
+                    <button class="play-btn" data-song="13" disabled>Reproducir</button>
+                </div>
+                <div class="track">
+                    <span class="track-title">Canción 14</span>
+                    <button class="play-btn" data-song="14" disabled>Reproducir</button>
+                </div>
+                <div class="track">
+                    <span class="track-title">Canción 15</span>
+                    <button class="play-btn" data-song="15" disabled>Reproducir</button>
                 </div>
             </div>
-        </section>
-
-        <!-- Reproductor de audio -->
-        <div id="audio-player" class="audio-player">
-            <audio id="audio" controls>
-                <source id="audio-source" src="" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Reproductor de audio -->
+    <div class="audio-player">
+        <audio id="audio-player" controls>
+            <source id="audio-source" src="ruta/a/tu/cancion.mp3" type="audio/mp3">
+            Tu navegador no soporta el reproductor de audio.
+        </audio>
+    </div>
+
+    <script src="script.js"></script> <!-- Aquí va el archivo JS -->
 </body>
 </html>
