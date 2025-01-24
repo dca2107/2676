@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2676</title>
+    <!-- Fuente Archivo de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>2676</h1>
+            <p>danieeel</p>
+        </header>
+
+        <section class="album-info">
+            <h2>Escucha el álbum</h2>
+            <div class="track-list">
+                <!-- Cada canción del álbum -->
+                <div class="track">
+                    <span class="track-title">Canción 1 - Título</span>
+                    <button class="play-btn" onclick="playTrack('track1')">Reproducir</button>
+                </div>
+                <div class="track">
+                    <span class="track-title">Canción 2 - Título</span>
+                    <button class="play-btn" onclick="playTrack('track2')">Reproducir</button>
+                </div>
+                <!-- Agrega más canciones aquí -->
+            </div>
+        </section>
+
+        <!-- Reproductor de audio -->
+        <div id="audio-player" class="audio-player">
+            <audio id="audio" controls>
+                <source id="audio-source" src="" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
