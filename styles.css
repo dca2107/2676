@@ -73,19 +73,19 @@ p {
     font-size: 1.2rem;
     font-weight: 500;
     flex: 1; /* Asegura que el título ocupe el espacio disponible */
-    text-align: right; /* Alineamos los títulos de las canciones a la derecha */
+    text-align: left; /* Alineamos los títulos de las canciones a la izquierda */
 }
 
 .play-btn {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 15px;  /* Ajusté el tamaño del padding para que el botón no sea tan ancho */
     font-size: 1rem;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
     text-align: center;  /* Centrar el texto del botón */
-    width: 120px;  /* Ajustar el ancho del botón */
+    width: auto;  /* El ancho del botón se ajusta al contenido */
     margin-left: 10px;  /* Separación entre el botón y el título */
 }
 
