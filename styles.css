@@ -153,3 +153,18 @@ audio {
     opacity: 0.6;
     box-shadow: none;
 }
+
+
+/* Fondos dinámicos */
+.mesh-blue-purple {
+    background: linear-gradient(135deg, #1f3c8f, #4a1a82);
+}
+
+.mesh-green-aqua {
+    background: linear-gradient(135deg, #1a824a, #26c3b8);
+}
+
+.mesh-red-purple {
+    background: linear-gradient(135deg, #8b1a1a, #812a82);
+}
+
