@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     box-sizing: border-box;
-    transition: background 1s ease;
+    transition: background 1s ease; /* Para transición suave del fondo */
 }
 
 /* Contenedor principal */
@@ -102,12 +102,12 @@ p {
     box-shadow: none;
 }
 
-/* Anclar el reproductor a la parte inferior */
+/* Anclar el reproductor a la parte inferior y centrarlo */
 .audio-player {
     position: fixed;
     bottom: 0;
-    center: 100%;
-    transform: translateX(0%);
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     max-width: 600px;
     background-color: #333;
@@ -117,6 +117,7 @@ p {
     z-index: 100; /* Aseguramos que el reproductor se quede encima del contenido */
 }
 
+/* Estilos del reproductor */
 audio {
     width: 100%;
     outline: none;
