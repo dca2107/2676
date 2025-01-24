@@ -35,3 +35,14 @@ function playTrack(trackId) {
     audioElement.play();
     currentTrack = trackId;
 }
+
+
+function stopPlayback() {
+    const audioElement = document.getElementById('audio');
+    const bodyElement = document.body;
+
+    audioElement.pause();
+    audioElement.currentTime = 0; // Reinicia el tiempo del audio
+    bodyElement.className = ''; // Restablece el fondo predeterminado
+    currentTrack = null;
+}
