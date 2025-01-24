@@ -10,7 +10,7 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    transition: background 1s ease;  /* Para suavizar la transición de color */
+    transition: background 1s ease;
 }
 
 .container {
@@ -72,6 +72,17 @@ p {
     background-color: #45a049;
 }
 
+/* Estilo para botones deshabilitados */
+.play-btn:disabled {
+    background-color: #888; /* Gris claro */
+    cursor: not-allowed;
+    color: #555;
+}
+
+.play-btn:disabled:hover {
+    background-color: #888; /* Sin cambio al hacer hover */
+}
+
 /* Estilo para canciones no disponibles */
 .unavailable {
     color: #888;
@@ -92,21 +103,4 @@ p {
 audio {
     width: 100%;
     outline: none;
-}
-
-/* Fondo tipo Mesh (gradientes radiales) */
-body {
-    transition: background 1s ease; /* Para suavizar el cambio de fondo */
-}
-
-body.mesh-blue-purple {
-    background-image: radial-gradient(circle, rgba(0, 0, 255, 0.8), rgba(128, 0, 128, 0.8));
-}
-
-body.mesh-green-aqua {
-    background-image: radial-gradient(circle, rgba(0, 100, 0, 0.8), rgba(0, 255, 255, 0.8));
-}
-
-body.mesh-red-purple {
-    background-image: radial-gradient(circle, rgba(255, 0, 0, 0.8), rgba(128, 0, 128, 0.8));
 }
