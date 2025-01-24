@@ -1,6 +1,3 @@
-
-
-
 // Rutas de las canciones disponibles
 const tracks = {
     track3: '2676/3.mp3',
@@ -21,13 +18,13 @@ let currentTrack = null;
 function playTrack(trackId) {
     const audioElement = document.getElementById('audio');
     const sourceElement = document.getElementById('audio-source');
-    
+
     // Cambiar la fuente del audio al track seleccionado
     sourceElement.src = tracks[trackId];
-    
+
     // Cambiar el fondo de la página aplicando la clase adecuada
-    document.body.className = backgrounds[trackId] || ''; // Fondo gris oscuro por defecto
-    
+    document.body.className = backgrounds[trackId] || '';
+
     // Detener la canción anterior si está en reproducción
     if (currentTrack && currentTrack !== trackId) {
         audioElement.pause();
@@ -36,3 +33,4 @@ function playTrack(trackId) {
     audioElement.load();
     audioElement.play();
     currentTrack = trackId;
+}
