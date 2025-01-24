@@ -145,7 +145,6 @@ audio {
 /* Estilo para títulos de canciones no disponibles */
 .track .track-title.disabled {
     color: #666; /* Gris claro */
-    text-decoration: line-through; /* (Opcional) Para indicar que no está disponible */
 }
 
 /* Ya tienes esto, pero se incluye por contexto */
