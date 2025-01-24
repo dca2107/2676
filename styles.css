@@ -10,6 +10,7 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    transition: background 1s ease;  /* Para suavizar la transición de color */
 }
 
 .container {
@@ -69,6 +70,12 @@ p {
 
 .play-btn:hover {
     background-color: #45a049;
+}
+
+/* Estilo para canciones no disponibles */
+.unavailable {
+    color: #888;
+    font-style: italic;
 }
 
 /* Estilo del reproductor */
