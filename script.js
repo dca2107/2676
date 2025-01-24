@@ -1,36 +1,33 @@
-// Rutas de las canciones disponibles
-const tracks = {
-    track3: '2676/3.mp3',
-    track10: '2676/10.mp3',
-    track12: '2676/12.mp3',
-};
-
-// Cambios en el fondo por canción
-const backgrounds = {
-    track3: 'mesh-blue-purple',    // Azul-morado oscuro
-    track10: 'mesh-green-aqua',   // Verde-aqua oscuro
-    track12: 'mesh-red-purple',   // Rojo-morado oscuro
-};
-
-let currentTrack = null;
-
-// Función para reproducir una canción y cambiar el fondo
-function playTrack(trackId) {
-    const audioElement = document.getElementById('audio');
-    const sourceElement = document.getElementById('audio-source');
-    
-    // Cambiar la fuente del audio al track seleccionado
-    sourceElement.src = tracks[trackId];
-    
-    // Cambiar el fondo de la página aplicando la clase adecuada
-    document.body.className = backgrounds[trackId] || ''; // Fondo gris oscuro por defecto
-    
-    // Detener la canción anterior si está en reproducción
-    if (currentTrack && currentTrack !== trackId) {
-        audioElement.pause();
+// Función para cambiar el fondo según la canción
+function changeBackground(songNumber) {
+    if (songNumber === 3) {
+        document.body.style.background = 'linear-gradient(45deg, #0f4c82, #4b0f82)'; // Azul-morado
+    } else if (songNumber === 10) {
+        document.body.style.background = 'linear-gradient(45deg, #2d9c7b, #1bb0c3)'; // Verde-Aqua
+    } else if (songNumber === 12) {
+        document.body.style.background = 'linear-gradient(45deg, #d32f2f, #6a1b9a)'; // Rojo-morado
+    } else {
+        document.body.style.background = '#121212'; // Fondo gris oscuro si no es una de las canciones especiales
     }
+}
 
-    audioElement.load();
-    audioElement.play();
-    currentTrack = trackId;
+// Función para restaurar el fondo cuando se pausa
+function resetBackground() {
+    document.body.style.background = '#121212'; // Regresa a gris oscuro
+}
+
+// Asignar eventos a los botones de reproducción
+const playButtons = document.querySelectorAll('.play-btn');
+playButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const songNumber = parseInt(e.target.dataset.song);
+        changeBackground(songNumber);
+    });
+});
+
+// Detectar cuando el audio está en pausa
+const audioPlayer = document.querySelector('audio');
+if (audioPlayer) {
+    audioPlayer.addEventListener('pause', resetBackground);
+    audioPlayer.addEventListener('ended', resetBackground);  // Para cuando el audio termine de reproducirse también
 }
