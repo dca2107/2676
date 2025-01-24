@@ -113,23 +113,21 @@ p {
 
 /* Reproductor de audio */
 .audio-player {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 600px;
+    position: sticky;
+    top: 0; /* Se queda pegado a la parte superior */
+    margin-bottom: 20px; /* Espacio entre el reproductor y la lista */
     background-color: #333;
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Para asegurarse de que esté encima del contenido */
 }
 
 audio {
     width: 100%;
     outline: none;
 }
+
 
 /* Modo responsivo */
 @media (max-width: 768px) {
