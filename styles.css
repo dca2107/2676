@@ -56,8 +56,6 @@ p {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     margin-top: 20px;
-     align-items: center; /* Centra la lista en el eje horizontal */
-    justify-content: flex-start; /* Mantiene las canciones alineadas hacia arriba */
 }
 
 .track {
