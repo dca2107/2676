@@ -2,7 +2,7 @@
 const tracks = {
     track3: '2676/3.mp3',
     track10: '2676/10.mp3',
-    track12: '2676/.mp3',
+    track12: '2676/12.mp3',
 };
 
 // Cambios en el fondo por canción
