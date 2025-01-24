@@ -65,4 +65,52 @@ p {
     border-bottom: 1px solid #444;
 }
 
-.track:l
+.track:last-child {
+    border-bottom: none;
+}
+
+.track-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    flex: 1;
+    text-align: left;
+}
+
+.play-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    width: auto;
+    margin-left: 10px;
+}
+
+.play-btn:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para botones deshabilitados */
+.play-btn:disabled {
+    background-color: #777;
+    color: #bbb;
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+}
+
+/* Anclar el reproductor a la parte inferior */
+.audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    box-shado
