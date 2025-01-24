@@ -7,18 +7,24 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;  /* Alineación flexible para evitar que el contenido se "apile" */
+    height: 100%;
+    min-height: 100vh; /* Aseguramos que el cuerpo ocupe toda la altura de la pantalla */
     flex-direction: column;
+    box-sizing: border-box;
     transition: background 1s ease;
 }
 
+/* Contenedor principal */
 .container {
     text-align: center;
     max-width: 900px;
+    width: 100%;
     padding: 20px;
+    box-sizing: border-box;  /* Para que el padding no afecte el ancho del contenedor */
 }
 
+/* Encabezado */
 header {
     margin-bottom: 30px;
 }
@@ -45,17 +51,29 @@ p {
     gap: 15px;
     text-align: left;
     padding: 0 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro 70% transparente */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 20px; /* Añadimos un margen superior para separar un poco de la descripción */
 }
 
 .track {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #444; /* Línea divisoria entre las canciones */
+}
+
+.track:last-child {
+    border-bottom: none; /* Eliminamos la línea en el último elemento */
 }
 
 .track-title {
     font-size: 1.2rem;
     font-weight: 500;
+    flex: 1; /* Asegura que el título ocupe el espacio disponible */
+    text-align: right; /* Alineamos los títulos de las canciones a la derecha */
 }
 
 .play-btn {
@@ -66,6 +84,9 @@ p {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;  /* Centrar el texto del botón */
+    width: 120px;  /* Ajustar el ancho del botón */
+    margin-left: 10px;  /* Separación entre el botón y el título */
 }
 
 .play-btn:hover {
@@ -74,19 +95,11 @@ p {
 
 /* Estilo para botones deshabilitados */
 .play-btn:disabled {
-    background-color: #888; /* Gris claro */
-    cursor: not-allowed;
-    color: #555;
-}
-
-.play-btn:disabled:hover {
-    background-color: #888; /* Sin cambio al hacer hover */
-}
-
-/* Estilo para canciones no disponibles */
-.unavailable {
-    color: #888;
-    font-style: italic;
+    background-color: #777; /* Gris oscuro */
+    color: #bbb;  /* Gris claro */
+    cursor: not-allowed; /* Cursor de no permitido */
+    opacity: 0.6; /* Opacidad para mayor contraste */
+    box-shadow: none; /* Elimina sombras del botón deshabilitado */
 }
 
 /* Estilo del reproductor */
