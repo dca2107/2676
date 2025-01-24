@@ -9,8 +9,6 @@ function changeBackground(songNumber) {
     } else if (songNumber === 12) {
         document.body.style.background = 'linear-gradient(45deg, #d32f2f, #6a1b9a)'; // Rojo-morado
         changeSong('2676/12.mp3'); // Ruta de la canción 12
-    } else {
-        document.body.style.background = '#121212'; // Fondo gris oscuro si no es una de las canciones especiales
     }
 }
 
@@ -25,9 +23,14 @@ function changeSong(songPath) {
     audioPlayer.play();  // Reproducir la canción automáticamente
 }
 
-// Función para restaurar el fondo cuando se pausa
+// Función para restaurar el fondo cuando no hay canción o se pausa
 function resetBackground() {
-    document.body.style.background = '#121212'; // Regresa a gris oscuro
+    const audioPlayer = document.querySelector('audio');
+    
+    // Solo poner el fondo gris si el audio no está reproduciéndose (en pausa o detenido)
+    if (audioPlayer.paused || audioPlayer.currentTime === 0) {
+        document.body.style.background = '#121212'; // Fondo gris oscuro
+    }
 }
 
 // Asignar eventos a los botones de reproducción
@@ -44,4 +47,7 @@ const audioPlayer = document.querySelector('audio');
 if (audioPlayer) {
     audioPlayer.addEventListener('pause', resetBackground);
     audioPlayer.addEventListener('ended', resetBackground);  // Para cuando el audio termine de reproducirse también
+    audioPlayer.addEventListener('play', () => { // Aseguramos que no se resetee si está en reproducción
+        // No hacer nada para el fondo cuando el audio está en reproducción
+    });
 }
