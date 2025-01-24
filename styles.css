@@ -1,7 +1,7 @@
 /* General */
 body {
     font-family: 'Archivo', sans-serif;
-    background-color: #121212;
+    background-color: #121212; /* Fondo gris oscuro */
     color: #f0f0f0;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     box-sizing: border-box;
-    transition: background 1s ease; /* Para transición suave del fondo */
+    transition: background 1s ease;
 }
 
 /* Contenedor principal */
@@ -102,7 +102,7 @@ p {
     box-shadow: none;
 }
 
-/* Anclar el reproductor a la parte inferior y centrarlo */
+/* Anclar el reproductor a la parte inferior */
 .audio-player {
     position: fixed;
     bottom: 0;
@@ -114,10 +114,9 @@ p {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* Aseguramos que el reproductor se quede encima del contenido */
+    z-index: 100; /* Asegura que el reproductor se quede encima del contenido */
 }
 
-/* Estilos del reproductor */
 audio {
     width: 100%;
     outline: none;
