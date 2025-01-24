@@ -1,132 +1,130 @@
-/* General */
+/* Fuentes y colores generales */
 body {
     font-family: 'Archivo', sans-serif;
-    background-color: #121212; /* Fondo gris oscuro */
+    background: linear-gradient(120deg, #2b1055, #7597de);
     color: #f0f0f0;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100%;
     min-height: 100vh;
+    display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    transition: background 1s ease;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background 1s ease-in-out;
 }
 
 /* Contenedor principal */
 .container {
-    text-align: center;
     max-width: 900px;
     width: 100%;
     padding: 20px;
-    box-sizing: border-box;
+    text-align: center;
+    margin-top: 30px;
 }
 
 /* Encabezado */
-header {
-    margin-bottom: 30px;
-}
-
-h1 {
-    font-size: 2.5rem;
+header h1 {
+    font-size: 3.5rem;
     margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-p {
-    font-size: 1.1rem;
-    color: #888;
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #d1d1d1;
 }
 
-/* Estilo de la lista de canciones */
+/* Lista de canciones */
 .album-info h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin: 30px 0;
+    color: #ffce54;
 }
 
 .track-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    text-align: left;
-    padding: 0 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     margin-top: 20px;
 }
 
 .track {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #444;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.track:last-child {
-    border-bottom: none;
+.track:hover {
+    transform: scale(1.05);
+    background: rgba(255, 206, 84, 0.1);
 }
 
 .track-title {
     font-size: 1.2rem;
-    font-weight: 500;
-    flex: 1;
-    text-align: left;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #fff;
 }
 
+/* Botón de reproducción */
 .play-btn {
-    background-color: #4CAF50;
+    background: linear-gradient(120deg, #ff416c, #ff4b2b);
     color: white;
-    padding: 8px 15px;
-    font-size: 1rem;
     border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
-    width: auto;
-    margin-left: 10px;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .play-btn:hover {
-    background-color: #45a049;
+    background: linear-gradient(120deg, #ff4b2b, #ff416c);
+    transform: translateY(-3px);
 }
 
-/* Estilo para botones deshabilitados */
 .play-btn:disabled {
-    background-color: #777;
-    color: #bbb;
+    background: #777;
+    color: #ccc;
     cursor: not-allowed;
-    opacity: 0.6;
-    box-shadow: none;
 }
 
-/* Anclar el reproductor a la parte inferior */
+/* Reproductor de audio */
 .audio-player {
     position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
+    bottom: 20px;
+    width: calc(100% - 40px);
     max-width: 600px;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* Asegura que el reproductor se quede encima del contenido */
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 audio {
     width: 100%;
-    outline: none;
 }
 
-/* Para dispositivos móviles */
+/* Respuesta móvil */
 @media (max-width: 768px) {
-    .audio-player {
-        position: sticky;
-        bottom: 0;
-        z-index: 100; /* Asegura que el reproductor quede encima */
+    .track-list {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1rem;
     }
 }
