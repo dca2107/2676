@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     box-sizing: border-box;
-    transition: background 1s ease;
+    transition: background 3s ease;
 }
 
 /* Contenedor principal */
