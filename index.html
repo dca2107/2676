@@ -15,8 +15,14 @@
             <p>Álbum de danieeel</p>
         </header>
 
-        <section class="album-info">
-            <h2>Escucha el álbum</h2>
+        <!-- Reproductor de audio -->
+        <div id="audio-player" class="audio-player">
+            <audio id="audio" controls>
+                <source id="audio-source" src="" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+
             <div class="track-list">
                 <!-- Canción 1 (No disponible) -->
                 <div class="track">
@@ -110,12 +116,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Reproductor de audio -->
-        <div id="audio-player" class="audio-player">
-            <audio id="audio" controls>
-                <source id="audio-source" src="" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
             </audio>
         </div>
     </div>
