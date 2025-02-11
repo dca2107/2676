@@ -4,45 +4,52 @@ const tracks = {
     track12: '2676/12.mp3',
 };
 
-// Asociar canciones con fondos
 const backgrounds = {
-    track3: 'mesh-blue-purple',    // Azul-morado
-    track10: 'mesh-green-aqua',   // Verde-aqua
-    track12: 'mesh-red-purple',   // Rojo-morado
+    track3: 'mesh-blue-purple',
+    track10: 'mesh-green-aqua',
+    track12: 'mesh-red-purple',
 };
 
 let currentTrack = null;
 
-// Función para reproducir una canción y cambiar el fondo
 function playTrack(trackId) {
     const audioElement = document.getElementById('audio');
     const sourceElement = document.getElementById('audio-source');
     const bodyElement = document.body;
 
-    // Cambiar la fuente del audio al track seleccionado
+    // Remove current background class
+    Object.values(backgrounds).forEach(className => {
+        bodyElement.classList.remove(className);
+    });
+
+    // Add new background class with a slight delay for smooth transition
+    setTimeout(() => {
+        bodyElement.classList.add(backgrounds[trackId] || '');
+    }, 50);
+
+    // Update audio source and play
     sourceElement.src = tracks[trackId];
-
-    // Cambiar la clase del fondo del <body>
-    bodyElement.className = backgrounds[trackId] || ''; // Fondo gris oscuro si no se encuentra
-
-    // Detener la canción anterior si está en reproducción
+    
     if (currentTrack && currentTrack !== trackId) {
         audioElement.pause();
     }
-
-    // Reproducir la nueva canción
+    
     audioElement.load();
     audioElement.play();
     currentTrack = trackId;
 }
 
-
 function stopPlayback() {
     const audioElement = document.getElementById('audio');
     const bodyElement = document.body;
-
+    
     audioElement.pause();
-    audioElement.currentTime = 0; // Reinicia el tiempo del audio
-    bodyElement.className = ''; // Restablece el fondo predeterminado
+    audioElement.currentTime = 0;
+    
+    // Remove all background classes with smooth transition
+    Object.values(backgrounds).forEach(className => {
+        bodyElement.classList.remove(className);
+    });
+    
     currentTrack = null;
 }
