@@ -23,100 +23,94 @@
             </audio>
         </div>
 
-            <div class="track-list">
-                <!-- Canción 1 (No disponible) -->
-                <div class="track">
-                    <span class="track-title disabled">1</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-
-                <!-- Canción 2 (No disponible) -->
-                <div class="track">
-                    <span class="track-title disabled">2</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-
-                <!-- Canción 3 (Disponible) -->
-                <div class="track">
-                    <span class="track-title">3</span>
-                    <span class="track-duration">4:16</span>
-                    <button class="play-btn" onclick="playTrack('track3')">Reproducir</button>
-                </div>
-
-                <!-- Canción 4-9 (No disponibles) -->
-                <div class="track">
-                    <span class="track-title disabled">4</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-                <div class="track">
-                    <span class="track-title disabled">5</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-                <div class="track">
-                    <span class="track-title disabled">6</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-                <div class="track">
-                    <span class="track-title disabled">7</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-                <div class="track">
-                    <span class="track-title disabled">8</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-                <div class="track">
-                    <span class="track-title disabled">9</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-
-                <!-- Canción 10 (Disponible) -->
-                <div class="track">
-                    <span class="track-title">10</span>
-                    <span class="track-duration">2:50</span>
-                    <button class="play-btn" onclick="playTrack('track10')">Reproducir</button>
-                </div>
-
-                <!-- Canción 11 (No disponible) -->
-                <div class="track">
-                    <span class="track-title disabled">11</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-
-                <!-- Canción 12 (Disponible) -->
-                <div class="track">
-                    <span class="track-title">12</span>
-                    <span class="track-duration">4:37</span>
-                    <button class="play-btn" onclick="playTrack('track12')">Reproducir</button>
-                </div>
-
-                <!-- Canción 13-15 (No disponibles) -->
-                <div class="track">
-                    <span class="track-title disabled">13</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-                <div class="track">
-                    <span class="track-title disabled">14</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
-                <div class="track">
-                    <span class="track-title disabled">15</span>
-                    <span class="track-duration">--:--</span>
-                    <button class="play-btn" disabled>Reproducir</button>
-                </div>
+        <!-- Lista de Canciones -->
+        <div class="track-list">
+            <!-- Canciones: Orden 1 a 3 (No disponibles) -->
+            <div class="track disabled">
+                <span class="track-title">1</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
             </div>
-        </section>
-            </audio>
+            <div class="track disabled">
+                <span class="track-title">2</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
+            <div class="track">
+                <span class="track-title">3</span>
+                <span class="track-duration">4:16</span>
+                <button class="play-btn" onclick="playTrack('track3')">Reproducir</button>
+            </div>
+
+            <!-- Canciones 4 a 9 (No disponibles) -->
+            <div class="track disabled">
+                <span class="track-title">4</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
+            <div class="track disabled">
+                <span class="track-title">5</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
+            <div class="track disabled">
+                <span class="track-title">6</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
+            <div class="track disabled">
+                <span class="track-title">7</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
+            <div class="track disabled">
+                <span class="track-title">8</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
+            <div class="track disabled">
+                <span class="track-title">9</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
+
+            <!-- Canción 10 (Disponible) -->
+            <div class="track">
+                <span class="track-title">10</span>
+                <span class="track-duration">2:50</span>
+                <button class="play-btn" onclick="playTrack('track10')">Reproducir</button>
+            </div>
+
+            <!-- Canción 11 (No disponible) -->
+            <div class="track disabled">
+                <span class="track-title">11</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
+
+            <!-- Canción 12 (Disponible) -->
+            <div class="track">
+                <span class="track-title">12</span>
+                <span class="track-duration">4:37</span>
+                <button class="play-btn" onclick="playTrack('track12')">Reproducir</button>
+            </div>
+
+            <!-- Canciones 13 a 15 (No disponibles) -->
+            <div class="track disabled">
+                <span class="track-title">13</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
+            <div class="track disabled">
+                <span class="track-title">14</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
+            <div class="track disabled">
+                <span class="track-title">15</span>
+                <span class="track-duration">--:--</span>
+                <button class="play-btn" disabled>Reproducir</button>
+            </div>
         </div>
     </div>
 
