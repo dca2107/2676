@@ -1,18 +1,32 @@
+/* Variables CSS */
+:root {
+    --background-color: #121212;
+    --text-color: #f0f0f0;
+    --button-color: #4CAF50;
+    --button-hover-color: #45a049;
+    --disabled-color: #555;
+    --track-border-color: #444;
+    --track-duration-color: #aaa;
+    --track-title-disabled-color: #666;
+    --background-transition: 3s ease;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --audio-player-bg: #333;
+}
+
 /* General */
 body {
     font-family: 'Archivo', sans-serif;
-    background-color: #121212;
-    color: #f0f0f0;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-center;
-    height: 100%;
-    min-height: 100vh;
+    align-items: center;
+    height: 100vh;
     flex-direction: column;
     box-sizing: border-box;
-    transition: background 3s ease;
+    transition: background var(--background-transition);
 }
 
 /* Contenedor principal */
@@ -63,7 +77,7 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--track-border-color);
 }
 
 .track:last-child {
@@ -79,7 +93,7 @@ p {
 
 .track-duration {
     font-size: 1rem;
-    color: #aaa;
+    color: var(--track-duration-color);
     text-align: right;
     flex: 0.5;
     padding-right: 10px;
@@ -87,7 +101,7 @@ p {
 
 /* Botones de reproducción */
 .play-btn {
-    background-color: #4CAF50;
+    background-color: var(--button-color);
     color: white;
     padding: 8px 15px;
     font-size: 1rem;
@@ -98,14 +112,14 @@ p {
 }
 
 .play-btn:hover {
-    background-color: #45a049;
+    background-color: var(--button-hover-color);
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--box-shadow);
 }
 
 /* Botones deshabilitados */
 .play-btn:disabled {
-    background-color: #555;
+    background-color: var(--disabled-color);
     color: #bbb;
     cursor: not-allowed;
     opacity: 0.7;
@@ -114,20 +128,19 @@ p {
 /* Reproductor de audio */
 .audio-player {
     position: sticky;
-    top: 0; /* Se queda pegado a la parte superior */
-    margin-bottom: 20px; /* Espacio entre el reproductor y la lista */
-    background-color: #333;
+    top: 0;
+    margin-bottom: 20px;
+    background-color: var(--audio-player-bg);
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Para asegurarse de que esté encima del contenido */
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
 }
 
 audio {
     width: 100%;
     outline: none;
 }
-
 
 /* Modo responsivo */
 @media (max-width: 768px) {
@@ -142,18 +155,8 @@ audio {
 
 /* Estilo para títulos de canciones no disponibles */
 .track .track-title.disabled {
-    color: #666; /* Gris claro */
+    color: var(--track-title-disabled-color);
 }
-
-/* Ya tienes esto, pero se incluye por contexto */
-.play-btn:disabled {
-    background-color: #777;
-    color: #bbb;
-    cursor: not-allowed;
-    opacity: 0.6;
-    box-shadow: none;
-}
-
 
 /* Fondos dinámicos */
 .mesh-blue-purple {
