@@ -17,17 +17,17 @@ function playTrack(trackId) {
     const sourceElement = document.getElementById('audio-source');
     const bodyElement = document.body;
 
-    // Remove current background class
+    // Elimina la clase de fondo actual
     Object.values(backgrounds).forEach(className => {
         bodyElement.classList.remove(className);
     });
 
-    // Add new background class with a slight delay for smooth transition
+    // Agrega la nueva clase de fondo con un pequeño retraso para una transición suave
     setTimeout(() => {
         bodyElement.classList.add(backgrounds[trackId] || '');
     }, 50);
 
-    // Update audio source and play
+    // Actualiza la fuente del audio y reproduce
     sourceElement.src = tracks[trackId];
     
     if (currentTrack && currentTrack !== trackId) {
@@ -39,6 +39,7 @@ function playTrack(trackId) {
     currentTrack = trackId;
 }
 
+// Función para detener la reproducción y restaurar el fondo original
 function stopPlayback() {
     const audioElement = document.getElementById('audio');
     const bodyElement = document.body;
@@ -46,7 +47,7 @@ function stopPlayback() {
     audioElement.pause();
     audioElement.currentTime = 0;
     
-    // Remove all background classes with smooth transition
+    // Elimina todas las clases de fondo
     Object.values(backgrounds).forEach(className => {
         bodyElement.classList.remove(className);
     });
@@ -54,10 +55,15 @@ function stopPlayback() {
     currentTrack = null;
 }
 
-if (tracks[trackId]) {
-    sourceElement.src = tracks[trackId];
-} else {
-    console.error('Track no encontrado:', trackId);
-    return; // O manejar el error de otra forma
-}
-
+// Agregar evento de pausa para restaurar el fondo original
+document.getElementById('audio').addEventListener('pause', function() {
+    const bodyElement = document.body;
+    
+    // Eliminar el fondo actual
+    Object.values(backgrounds).forEach(className => {
+        bodyElement.classList.remove(className);
+    });
+    
+    // Restaurar el fondo original
+    bodyElement.style.background = '#121212'; // Color original
+});
