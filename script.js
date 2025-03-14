@@ -33,37 +33,30 @@ function playTrack(trackId) {
     if (currentTrack && currentTrack !== trackId) {
         audioElement.pause();
     }
-    
+
     audioElement.load();
     audioElement.play();
     currentTrack = trackId;
 }
 
-// Función para detener la reproducción y restaurar el fondo original
-function stopPlayback() {
+// Función para pausar la reproducción y restaurar el fondo original
+function pausePlayback() {
     const audioElement = document.getElementById('audio');
     const bodyElement = document.body;
-    
+
+    // Pausar el audio
     audioElement.pause();
-    audioElement.currentTime = 0;
-    
-    // Elimina todas las clases de fondo
-    Object.values(backgrounds).forEach(className => {
-        bodyElement.classList.remove(className);
-    });
-    
+
+    // Restaurar el fondo original
+    bodyElement.style.background = '#121212'; // Fondo original sin cambios
+
     currentTrack = null;
 }
 
-// Agregar evento de pausa para restaurar el fondo original
+// Escuchar el evento de pausa del audio y restaurar el fondo original
 document.getElementById('audio').addEventListener('pause', function() {
     const bodyElement = document.body;
     
-    // Eliminar el fondo actual
-    Object.values(backgrounds).forEach(className => {
-        bodyElement.classList.remove(className);
-    });
-    
     // Restaurar el fondo original
-    bodyElement.style.background = '#121212'; // Color original
+    bodyElement.style.background = '#121212'; // Fondo original
 });
