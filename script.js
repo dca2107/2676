@@ -53,3 +53,11 @@ function stopPlayback() {
     
     currentTrack = null;
 }
+
+if (tracks[trackId]) {
+    sourceElement.src = tracks[trackId];
+} else {
+    console.error('Track no encontrado:', trackId);
+    return; // O manejar el error de otra forma
+}
+
