@@ -115,8 +115,8 @@ audio {
 .play-btn {
   font-family: 'Inter', sans-serif;
   font-weight: bold;
-  background-color: white;
-  color: black;
+  background-color: #f0f0f0;
+  color: #212121;
   padding: 10px 20px;
   font-size: 1rem;
   border: none;                /* Corregido: 'border: 1px' no es válido */
