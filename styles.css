@@ -218,14 +218,13 @@ input[type="range"] {
 
 .progress-volume-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 15px;
   margin-top: 10px;
 }
 
 .progress-container {
-  flex: 0.95; /* Ocupa la mayor parte del espacio */
+  flex: 1; /* Ocupa todo el espacio posible */
   display: flex;
   align-items: center;
   gap: 20px;
@@ -240,18 +239,20 @@ input[type="range"] {
 .progress-container input[type="range"] {
   flex: 1;
   cursor: pointer;
+  min-width: 0; /* para evitar overflow */
 }
 
 .volume-container {
+  width: 100px; /* Más pequeña que la barra de progreso */
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 120px; /* Barra más corta */
 }
 
 #volumeControl {
   flex: 1;
   cursor: pointer;
+  min-width: 0;
 }
 
 /* Botón de volumen */
