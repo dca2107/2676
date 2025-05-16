@@ -166,10 +166,32 @@ audio {
   background: none;
   border: none;
   color: #fff;
-  font-size: clamp(18px, 5vw, 30px); /* Tamaño flexible entre 18px y 30px según ancho */
+  font-size: 24px;          /* tamaño base */
+  padding: 15px 20px;
   cursor: pointer;
-  padding: clamp(10px, 3vw, 20px);
   transition: color 0.2s, transform 0.2s;
+  max-width: 60px;          /* evita que sean demasiado anchos */
+  width: 8vw;               /* ancho relativo */
+  min-width: 30px;          /* tamaño mínimo */
+  box-sizing: border-box;   /* incluye padding en el ancho */
+}
+
+@media (max-width: 768px) {
+  .controls button {
+    font-size: 20px;
+    padding: 12px 15px;
+    max-width: 50px;
+    width: 10vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls button {
+    font-size: 16px;
+    padding: 8px 10px;
+    max-width: 40px;
+    width: 12vw;
+  }
 }
 
 .controls button:hover {
