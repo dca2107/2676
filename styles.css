@@ -169,6 +169,7 @@ audio {
   flex-wrap: wrap;        /* Permite que los botones bajen a la siguiente línea */
   max-width: 100%;        /* No exceder el ancho del contenedor padre */
   overflow-x: hidden;     /* Evita scroll horizontal */
+  overflow-y: hidden;     /* Evita scroll horizontal */
   box-sizing: border-box; /* Incluye padding y borde en el ancho */
 }
 
