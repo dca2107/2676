@@ -16,6 +16,13 @@ body {
   transition: background 3s ease;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
 /* Contenedor principal */
 .container {
   text-align: center;
@@ -77,9 +84,9 @@ audio {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   box-shadow: 0 2px 0px rgba(0, 0, 0, 0.3);
-  margin: auto;           /* Centrado horizontal y margen vertical */
+  margin: 10px auto;           /* Centrado horizontal y margen vertical */
   width: 100%;                 /* Ocupa todo el ancho disponible */
-  padding: 10px;               /* Padding interno */
+  padding: 20px;
   box-sizing: border-box;      /* Incluye padding en el ancho total */
 }
 
@@ -158,7 +165,7 @@ audio {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   margin: 25px 0;
   flex-wrap: wrap;        /* Permite que los botones bajen a la siguiente línea */
   max-width: 100%;        /* No exceder el ancho del contenedor padre */
@@ -170,7 +177,7 @@ audio {
   background: none;
   border: none;
   color: #fff;
-  font-size: 24px;          /* Tamaño base */
+  font-size: 26px;          /* Tamaño base */
   padding: 15px 20px;
   cursor: pointer;
   transition: color 0.2s, transform 0.2s;
@@ -182,7 +189,7 @@ audio {
 
 @media (max-width: 768px) {
   .controls button {
-    font-size: 20px;
+    font-size: 26px;
     padding: 12px 15px;
     max-width: 50px;
     width: 10vw;
