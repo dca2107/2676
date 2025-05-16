@@ -1,119 +1,196 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2676</title>
-    <!-- Fuente Archivo de Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2676</title>
+  <!-- Fuente Archivo de Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>2676</h1>
-            <p>Álbum temporal</p>
-        </header>
+  <div class="container">
+    <header>
+      <h1>2676</h1>
+      <p>Álbum temporal</p>
+    </header>
 
-        <!-- Reproductor de audio -->
-        <div id="audio-player" class="audio-player">
-            <audio id="audio" controls>
-                <source id="audio-source" src="" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
+    <!-- REPRODUCTOR -->
+    <section id="audio-player" class="audio-player player" aria-label="Reproductor de música">
+      <h3 id="trackTitle" aria-live="polite">Reproductor</h3>
+      <audio id="audio" preload="metadata" tabindex="-1" aria-label="Reproductor de audio">
+        <source id="audio-source" src="" type="audio/mp3" />
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+
+      <!-- Barra progreso + volumen -->
+      <div class="progress-volume-container">
+        <div class="progress-container">
+          <span id="currentTime" aria-live="off">0:00</span>
+          <input
+            type="range"
+            id="progressBar"
+            value="0"
+            min="0"
+            step="1"
+            aria-label="Barra de progreso de la canción"
+          />
+          <span id="duration" aria-live="off">0:00</span>
         </div>
 
-        <!-- Lista de Canciones -->
-        <div class="track-list">
-            <!-- Canciones: Orden 1 a 3 (No disponibles) -->
-            <div class="track disabled">
-                <span class="track-title">1</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-            <div class="track disabled">
-                <span class="track-title">2</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-            <div class="track">
-                <span class="track-title">3</span>
-                <span class="track-duration">4:16</span>
-                <button class="play-btn" onclick="playTrack('track3')">Reproducir</button>
-            </div>
-
-            <!-- Canciones 4 a 9 (No disponibles) -->
-            <div class="track disabled">
-                <span class="track-title">4</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-            <div class="track disabled">
-                <span class="track-title">5</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-            <div class="track disabled">
-                <span class="track-title">6</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-            <div class="track disabled">
-                <span class="track-title">7</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-            <div class="track disabled">
-                <span class="track-title">8</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-            <div class="track disabled">
-                <span class="track-title">9</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-
-            <!-- Canción 10 (Disponible) -->
-            <div class="track">
-                <span class="track-title">10</span>
-                <span class="track-duration">2:50</span>
-                <button class="play-btn" onclick="playTrack('track10')">Reproducir</button>
-            </div>
-
-            <!-- Canción 11 (No disponible) -->
-            <div class="track disabled">
-                <span class="track-title">11</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-
-            <!-- Canción 12 (Disponible) -->
-            <div class="track">
-                <span class="track-title">12</span>
-                <span class="track-duration">4:37</span>
-                <button class="play-btn" onclick="playTrack('track12')">Reproducir</button>
-            </div>
-
-            <!-- Canciones 13 a 15 (No disponibles) -->
-            <div class="track disabled">
-                <span class="track-title">13</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-            <div class="track disabled">
-                <span class="track-title">14</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
-            <div class="track disabled">
-                <span class="track-title">15</span>
-                <span class="track-duration">--:--</span>
-                <button class="play-btn" disabled>Reproducir</button>
-            </div>
+        <div class="volume-container">
+          <button
+            id="volumeIcon"
+            class="material-icons"
+            aria-label="Control de volumen"
+            title="Control de volumen"
+            aria-pressed="true"
+          >volume_up</button>
+          <input
+            type="range"
+            id="volumeControl"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+            aria-label="Control de volumen"
+          />
         </div>
-    </div>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- Controles -->
+      <div class="controls" role="group" aria-label="Controles del reproductor">
+        <button
+          id="prevBtn"
+          class="material-icons"
+          aria-label="Pista anterior"
+          title="Pista anterior"
+        >skip_previous</button>
+
+        <button
+          id="playPauseBtn"
+          class="material-icons"
+          aria-label="Reproducir/Pausar"
+          title="Reproducir/Pausar"
+        >play_arrow</button>
+
+        <button
+          id="stopBtn"
+          class="material-icons"
+          aria-label="Detener"
+          title="Detener"
+        >stop</button>
+
+        <button
+          id="nextBtn"
+          class="material-icons"
+          aria-label="Siguiente pista"
+          title="Siguiente pista"
+        >skip_next</button>
+
+        <button
+          id="repeatBtn"
+          class="material-icons"
+          aria-label="Repetir"
+          title="Repetir"
+          aria-pressed="false"
+        >repeat</button>
+
+        <button
+          id="shuffleBtn"
+          class="material-icons"
+          aria-label="Aleatorio"
+          title="Reproducir aleatoriamente"
+          aria-pressed="false"
+        >shuffle</button>
+      </div>
+    </section>
+
+    <!-- LISTA DE CANCIONES -->
+    <section>
+      <div class="track-list" aria-label="Lista de canciones">
+        <ul>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">1</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">2</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track">
+            <span class="track-title">3</span>
+            <span class="track-duration">4:16</span>
+            <button class="play-btn" onclick="playTrack('track3')" aria-label="Reproducir canción 3">Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">4</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">5</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">6</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">7</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">8</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">9</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track">
+            <span class="track-title">10</span>
+            <span class="track-duration">2:50</span>
+            <button class="play-btn" onclick="playTrack('track10')" aria-label="Reproducir canción 10">Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">11</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track">
+            <span class="track-title">12</span>
+            <span class="track-duration">4:37</span>
+            <button class="play-btn" onclick="playTrack('track12')" aria-label="Reproducir canción 12">Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">13</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">14</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+          <li class="track disabled" aria-disabled="true">
+            <span class="track-title">15</span>
+            <span class="track-duration">--:--</span>
+            <button class="play-btn" disabled>Reproducir</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
