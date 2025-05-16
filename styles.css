@@ -48,11 +48,12 @@ p {
   position: sticky;
   top: 0;                      /* Se queda pegado a la parte superior al hacer scroll */
   margin-bottom: 10px;         /* Espacio entre el reproductor y la lista */
-  background-color: #333;
-  padding: 40px;
-  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;               /* Para asegurarse de que esté encima del contenido */
+  backdrop-filter: blur(10px);
 }
 
 audio {
@@ -62,21 +63,20 @@ audio {
 
 /* Lista de canciones */
 .album-info h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .track-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   text-align: left;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  margin: 15px auto;           /* Centrado horizontal y margen vertical */
+  box-shadow: 0 2px 0px rgba(0, 0, 0, 0.3);
+  margin: auto;           /* Centrado horizontal y margen vertical */
   width: 100%;                 /* Ocupa todo el ancho disponible */
-  padding: 40px;               /* Padding interno */
+  padding: 10px;               /* Padding interno */
   box-sizing: border-box;      /* Incluye padding en el ancho total */
 }
 
@@ -93,7 +93,7 @@ audio {
 }
 
 .track-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   flex: 1;
   padding-left: 15px;
@@ -112,8 +112,8 @@ audio {
 .play-btn {
   font-family: 'Inter', sans-serif;
   font-weight: bold;
-  background-color: blue;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 10px 20px;
   font-size: 1rem;
   border: none;                /* Corregido: 'border: 1px' no es válido */
@@ -123,7 +123,7 @@ audio {
 }
 
 .play-btn:hover {
-  background-color: darkblue;  /* Cambia color al pasar el cursor */
+  background-color: lightgray;  /* Cambia color al pasar el cursor */
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -154,9 +154,9 @@ audio {
 .controls {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;8i
   gap: 15px;
-  margin: 15px 0;
+  margin: 25px 0;
 }
 
 .controls button {
