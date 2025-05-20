@@ -56,7 +56,7 @@ function loadTrack(index, autoplay = true) {
     // Cambiar clase de fondo con transición suave
     Object.values(backgrounds).forEach(c => bodyElement.classList.remove(c));
     setTimeout(() => {
-        if(bgClass) bodyElement.classList.add(bgClass);
+        if (bgClass) bodyElement.classList.add(bgClass);
     }, 50);
 
     source.src = trackSrc;
@@ -64,9 +64,21 @@ function loadTrack(index, autoplay = true) {
     if (autoplay) audio.play();
     currentTrackIndex = index;
 
-    // Mostrar título bonito (sin "track" y con espacio)
-    trackTitle.textContent = trackId.replace('track', 'Canción ');
+    // Obtener título visible desde .track-title que esté junto al botón
+    let displayedTitle = trackId;
+    const trackElements = document.querySelectorAll('.track');
+    for (const trackElement of trackElements) {
+        const button = trackElement.querySelector('button');
+        if (button && button.getAttribute('onclick')?.includes(trackId)) {
+            const titleSpan = trackElement.querySelector('.track-title');
+            if (titleSpan) {
+                displayedTitle = titleSpan.textContent.trim();
+            }
+            break;
+        }
+    }
 
+    trackTitle.textContent = displayedTitle;
     playPauseBtn.textContent = autoplay ? 'pause' : 'play_arrow';
 }
 
