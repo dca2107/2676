@@ -171,20 +171,39 @@ audio {
   overflow-x: hidden;     /* Evita scroll horizontal */
   overflow-y: hidden;     /* Evita scroll horizontal */
   box-sizing: border-box; /* Incluye padding y borde en el ancho */
-}
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;}
 
 .controls button {
   background: none;
   border: none;
   color: #fff;
-  font-size: 26px;          /* Tamaño base */
+  font-size: 24px;
   padding: 15px 20px;
   cursor: pointer;
   transition: color 0.2s, transform 0.2s;
-  max-width: 60px;          /* Evita que sean demasiado anchos */
-  width: 8vw;               /* Ancho relativo */
-  min-width: 30px;          /* Tamaño mínimo */
-  box-sizing: border-box;   /* Incluye padding en el ancho */
+  max-width: 60px;
+  width: 8vw;
+  min-width: 30px;
+  box-sizing: border-box;
+
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-drag: none;  /* Safari */
+  -khtml-user-drag: none;   /* Konqueror */
+  -moz-user-drag: none;     /* Firefox */
+  -o-user-drag: none;       /* Opera */
+  user-drag: none;          /* Estándar */
+}
+
+
+.unselectable {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 @media (max-width: 768px) {
