@@ -206,21 +206,12 @@ audio {
   -ms-user-select: none;
 }
 
-@media (max-width: 768px) {
+@media {
   .controls button {
-    font-size: 26px;
-    padding: 12px 15px;
-    max-width: 50px;
-    width: 10vw;
-  }
-}
-
-@media (max-width: 480px) {
-  .controls button {
-    font-size: 16px;
-    padding: 8px 10px;
-    max-width: 40px;
-    width: 12vw;
+  font-size: clamp(16px, 4vw, 26px);
+  padding: clamp(8px, 2vw, 12px) clamp(10px, 3vw, 15px);
+  width: clamp(40px, 10vw, 50px);
+  max-width: 100%;
   }
 }
 
